@@ -96,7 +96,7 @@ public class LeaveMessageControl {
         String username = principal.getName();
         try {
             leaveMessage.setAnswererId(userService.findIdByUsername(username));
-            leaveMessage.setPId(Integer.parseInt(parentId.substring(1)));
+            leaveMessage.setpId(Integer.parseInt(parentId.substring(1)));
             leaveMessage.setLeaveMessageContent(JavaScriptCheck.javaScriptCheck(leaveMessage.getLeaveMessageContent()));
             String commentContent = leaveMessage.getLeaveMessageContent();
             if('@' == commentContent.charAt(0)){
@@ -134,10 +134,10 @@ public class LeaveMessageControl {
             int userId = userService.findIdByUsername(username);
             LeaveMessageLikesRecord leaveMessageLikesRecord = new LeaveMessageLikesRecord(pageName, Integer.parseInt(respondentId.substring(1)), userId, timeUtil.getFormatDateForFive());
 
-            if(leaveMessageLikesRecordService.isLiked(leaveMessageLikesRecord.getPageName(), leaveMessageLikesRecord.getPId(), userId)){
+            if(leaveMessageLikesRecordService.isLiked(leaveMessageLikesRecord.getPageName(), leaveMessageLikesRecord.getpId(), userId)){
                 return JsonResult.fail(CodeType.MESSAGE_HAS_THUMBS_UP).toJSON();
             }
-            DataMap data = leaveMessageService.updateLikeByPageNameAndId(pageName, leaveMessageLikesRecord.getPId());
+            DataMap data = leaveMessageService.updateLikeByPageNameAndId(pageName, leaveMessageLikesRecord.getpId());
             leaveMessageLikesRecordService.insertLeaveMessageLikesRecord(leaveMessageLikesRecord);
             return JsonResult.build(data).toJSON();
         } catch (Exception e){

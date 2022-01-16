@@ -20,7 +20,7 @@ public class Comment {
     /**
      * 回复的父id 若是评论则为 0，则是评论中的回复则为对应评论的id
      */
-    private long pId=0;
+    private long PId=0;
 
     /**
      * 评论者
@@ -68,12 +68,12 @@ public class Comment {
         this.articleId = articleId;
     }
 
-    public long getpId() {
-        return pId;
+    public long getPId() {
+        return PId;
     }
 
-    public void setpId(long pId) {
-        this.pId = pId;
+    public void setPId(long PId) {
+        this.PId = PId;
     }
 
     public int getAnswererId() {
