@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
  * @Date: 2019/5/16 14:39
  * Describe:
  */
-@Data
+
 @NoArgsConstructor
 public class FriendLink {
 
@@ -29,4 +29,27 @@ public class FriendLink {
         this.url = url;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBlogger() {
+        return blogger;
+    }
+
+    public void setBlogger(String blogger) {
+        this.blogger = blogger;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

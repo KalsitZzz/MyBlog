@@ -9,7 +9,7 @@ import java.util.Date;
  * @Date: 2018/11/28 15:01
  * Describe:
  */
-@Data
+
 public class DailySpeech {
 
     /**
@@ -32,4 +32,35 @@ public class DailySpeech {
      */
     private Date publishDate;
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getMood() {
+        return mood;
+    }
+
+    public void setMood(String mood) {
+        this.mood = mood;
+    }
+
+    public String getPicsUrl() {
+        return picsUrl;
+    }
+
+    public void setPicsUrl(String picsUrl) {
+        this.picsUrl = picsUrl;
+    }
+
+    public Date getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(Date publishDate) {
+        this.publishDate = publishDate;
+    }
 }
